@@ -10,7 +10,7 @@ class MainScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'Main Screen',
             style:
                 TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.bold),
