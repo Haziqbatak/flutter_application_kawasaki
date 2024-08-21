@@ -17,7 +17,7 @@ class _MainScreenState extends State<MainScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
   }
 
   @override
@@ -56,6 +56,7 @@ class _MainScreenState extends State<MainScreen>
               Tab(text: 'Recomended'),
               Tab(text: 'Popular'),
               Tab(text: 'News'),
+              Tab(text: 'Best Seller'),
             ],
           ),
         ),
@@ -65,6 +66,7 @@ class _MainScreenState extends State<MainScreen>
             MotorListView(),
             MotorListView(),
             MotorListView(),
+            BestSellerListView(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -136,6 +138,65 @@ class MotorListView extends StatelessWidget {
         );
       },
       itemCount: motorList.length,
+    );
+  }
+}
+
+class BestSellerListView extends StatelessWidget {
+  const BestSellerListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final bestSeller = motorList.where((motor) => motor.isBestSeller).toList();
+
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        final Motor motor = bestSeller[index];
+        return InkWell(
+          onTap: () {
+            print('Best Seller Card Clicked');
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(motor: motor),
+              ),
+            );
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              height: 100,
+              child: Card(
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.asset(motor.gambar),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [Text(motor.name), Text(motor.harga)],
+                        ),
+                      )
+                    ],
+                  )),
+            ),
+          ),
+        );
+      },
+      itemCount: bestSeller.length,
     );
   }
 }

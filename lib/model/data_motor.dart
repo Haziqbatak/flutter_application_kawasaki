@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 class Motor {
   String name;
   String harga;
@@ -5,6 +7,7 @@ class Motor {
   String gambar;
   String rating;
   List<String> urlGambar;
+  bool isBestSeller;
 
   Motor({
     required this.name,
@@ -13,6 +16,7 @@ class Motor {
     required this.gambar,
     required this.rating,
     required this.urlGambar,
+    required this.isBestSeller,
   });
 }
 
@@ -26,7 +30,9 @@ var motorList = [
       rating: "4.5",
       urlGambar: [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
-      ]),
+      ],
+      isBestSeller: true,
+      ),
   Motor(
       name: "Z e-1",
       harga: "Rp 146.900.000",
@@ -36,7 +42,9 @@ var motorList = [
       rating: "4.5",
       urlGambar: [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
-      ]),
+      ],
+      isBestSeller: false,
+      ),
   Motor(
       name: "KLX230 SE",
       harga: "Rp 56.800.000",
@@ -46,7 +54,9 @@ var motorList = [
       rating: "4.5",
       urlGambar: [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
-      ]),
+      ],
+      isBestSeller: false,
+      ),
   Motor(
       name: "KLX230SM",
       harga: "Rp 56.300.000",
@@ -56,7 +66,9 @@ var motorList = [
       rating: "4.5",
       urlGambar: [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
-      ]),
+      ],
+      isBestSeller: false,
+      ),
   Motor(
       name: "KLX230SM SE",
       harga: "Rp 58.600.000",
@@ -66,7 +78,9 @@ var motorList = [
       rating: "4.5",
       urlGambar: [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
-      ]),
+      ],
+      isBestSeller: false,
+      ),
   Motor(
       name: "Ninja ZX-10R ABS KRT EDITION",
       harga: "Rp 561.000.000",
@@ -76,7 +90,9 @@ var motorList = [
       rating: "4.5",
       urlGambar: [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
-      ]),
+      ],
+      isBestSeller: true,
+      ),
   Motor(
       name: "NINJA ZX-6R KRT EDITION",
       harga: "Rp 360.900.000",
@@ -86,7 +102,9 @@ var motorList = [
       rating: "4.5",
       urlGambar: [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
-      ]),
+      ],
+      isBestSeller: true,
+      ),
   Motor(
       name: "NINJA ZX-4RR",
       harga: "Rp 244.800.000",
@@ -96,7 +114,9 @@ var motorList = [
       rating: "4.5",
       urlGambar: [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
-      ]),
+      ],
+      isBestSeller: true,
+      ),
   Motor(
       name: "W175 SE",
       harga: "Rp 35.100.000",
@@ -106,7 +126,9 @@ var motorList = [
       rating: "4.5",
       urlGambar: [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
-      ]),
+      ],
+      isBestSeller: false,
+      ),
   Motor(
       name: "W175 CAFE",
       harga: "Rp 149.900.000",
@@ -116,5 +138,7 @@ var motorList = [
       rating: "4.5",
       urlGambar: [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
-      ]),
+      ],
+      isBestSeller: true,
+      ),
 ];
