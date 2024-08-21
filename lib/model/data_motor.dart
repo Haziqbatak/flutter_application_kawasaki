@@ -25,7 +25,7 @@ var motorList = [
       gambar: "assets/images/nomor_1.jpg",
       rating: "4.5",
       urlGambar: [
-        'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
       ]),
   Motor(
       name: "Z e-1",
@@ -35,7 +35,7 @@ var motorList = [
       gambar: "assets/images/nomor_2.jpg",
       rating: "4.5",
       urlGambar: [
-        'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
       ]),
   Motor(
       name: "KLX230 SE",
@@ -45,7 +45,7 @@ var motorList = [
       gambar: "assets/images/nomor_3.jpg",
       rating: "4.5",
       urlGambar: [
-        'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
       ]),
   Motor(
       name: "KLX230SM",
@@ -55,7 +55,7 @@ var motorList = [
       gambar: "assets/images/nomor_4.jpg",
       rating: "4.5",
       urlGambar: [
-        'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
       ]),
   Motor(
       name: "KLX230SM SE",
@@ -65,7 +65,7 @@ var motorList = [
       gambar: "assets/images/nomor_5.jpg",
       rating: "4.5",
       urlGambar: [
-        'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
       ]),
   Motor(
       name: "Ninja ZX-10R ABS KRT EDITION",
@@ -75,7 +75,7 @@ var motorList = [
       gambar: "assets/images/nomor_6.jpg",
       rating: "4.5",
       urlGambar: [
-        'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
       ]),
   Motor(
       name: "NINJA ZX-6R KRT EDITION",
@@ -85,7 +85,7 @@ var motorList = [
       gambar: "assets/images/nomor_7.jpg",
       rating: "4.5",
       urlGambar: [
-        'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
       ]),
   Motor(
       name: "NINJA ZX-4RR",
@@ -95,7 +95,7 @@ var motorList = [
       gambar: "assets/images/nomor_8.jpg",
       rating: "4.5",
       urlGambar: [
-        'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
       ]),
   Motor(
       name: "W175 SE",
@@ -105,7 +105,7 @@ var motorList = [
       gambar: "assets/images/nomor_9.jpg",
       rating: "4.5",
       urlGambar: [
-        'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
       ]),
   Motor(
       name: "W175 CAFE",
@@ -115,6 +115,6 @@ var motorList = [
       gambar: "assets/images/nomor_10.jpg",
       rating: "4.5",
       urlGambar: [
-        'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
       ]),
 ];
