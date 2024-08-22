@@ -113,7 +113,7 @@ var motorList = [
       gambar: "assets/images/nomor_8.jpg",
       rating: "4.5",
       urlGambar: [
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDdb_R-KD-8356Z7JW299KOM2glWmYYgp4LA&s'
       ],
       isBestSeller: true,
       ),
