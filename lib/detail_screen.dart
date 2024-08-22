@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_kawasaki/model/data_motor.dart';
 
@@ -15,7 +16,26 @@ class DetailScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Image.asset(motor.gambar),
+                // CarouselSlider with images from motor.urlGambar
+                CarouselSlider(
+                  options: CarouselOptions(
+                    height: 300.0, // Tinggi dari Carousel
+                    autoPlay: true, // Auto play gambar
+                    enlargeCenterPage: true, // Perbesar gambar yang di tengah
+                  ),
+                  items: motor.urlGambar.map((imageUrl) {
+                    return Builder(
+                      builder: (BuildContext context) {
+                        return Image.network(
+                          imageUrl,
+                          fit: BoxFit.cover, // Gambar menutupi sepenuhnya
+                        );
+                      },
+                    );
+                  }).toList(),
+                ),
+                const SizedBox(height: 16), // Memberi jarak
+                // Teks nama motor
                 Text(
                   motor.name,
                   style: const TextStyle(
@@ -27,6 +47,7 @@ class DetailScreen extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                 ),
+                // Bagian harga dan rating
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -58,6 +79,7 @@ class DetailScreen extends StatelessWidget {
                     )
                   ],
                 ),
+                const SizedBox(height: 16), // Memberi jarak
                 const Text(
                   'Deskripsi',
                   style: TextStyle(
@@ -68,6 +90,7 @@ class DetailScreen extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
+                // Deskripsi motor
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
@@ -76,7 +99,6 @@ class DetailScreen extends StatelessWidget {
                     textAlign: TextAlign.justify,
                   ),
                 ),
-                Image.network(motor.urlGambar[0]),
               ],
             ),
           ),
