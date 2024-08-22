@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class Motor {
   String name;
   String harga;
