@@ -29,7 +29,7 @@ var motorList = [
       gambar: "assets/images/nomor_1.jpg",
       rating: "4.5",
       urlGambar: [
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1I4ol8tznUrEigKXHqXH5wnUCOO7I21ve0Q&s'
       ],
       isBestSeller: true,
       ),
@@ -41,7 +41,7 @@ var motorList = [
       gambar: "assets/images/nomor_2.jpg",
       rating: "4.5",
       urlGambar: [
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvskvQZvioUvWydGFwi9u8P2766KoCRsxfDA&s'
       ],
       isBestSeller: false,
       ),
@@ -53,7 +53,7 @@ var motorList = [
       gambar: "assets/images/nomor_3.jpg",
       rating: "4.5",
       urlGambar: [
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxOkiikiEvLMPDp0fP1IOB2qP2GippWIZPw&s'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx3y6McjgCEaD5VJrGJHvpsMQh7rEZXbgSpA&s'
       ],
       isBestSeller: false,
       ),
