@@ -6,6 +6,8 @@ class Motor {
   String rating;
   List<String> urlGambar;
   bool isBestSeller;
+  bool isNew;
+  bool isRecomended;
 
   Motor({
     required this.name,
@@ -15,6 +17,8 @@ class Motor {
     required this.rating,
     required this.urlGambar,
     required this.isBestSeller,
+    required this.isNew,
+    required this.isRecomended,
   });
 }
 
@@ -33,6 +37,8 @@ var motorList = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdK1-M6IrAqUz53jtFqya3Dfr4qoAKPJWOGA&s'
       ],
       isBestSeller: true,
+      isNew: true,
+      isRecomended: false
       ),
   Motor(
       name: "Z e-1",
@@ -48,6 +54,8 @@ var motorList = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrchQexgCfjqYOhzMPUREjvKNg62fpl1e7JA&s'
       ],
       isBestSeller: false,
+      isNew: true,
+      isRecomended: false
       ),
   Motor(
       name: "KLX230 SE",
@@ -63,6 +71,8 @@ var motorList = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVXzir4nJtJMlydkNsTdHAeSveRfdJcYq89g&s'
       ],
       isBestSeller: false,
+      isNew: false,
+      isRecomended: true
       ),
   Motor(
       name: "KLX230SM",
@@ -78,6 +88,8 @@ var motorList = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoa7yjU8Gf74vKwHzMq5mqbjF5FzGwiUkmug&s'
       ],
       isBestSeller: false,
+      isNew: false,
+      isRecomended: true
       ),
   Motor(
       name: "KLX230SM SE",
@@ -93,6 +105,8 @@ var motorList = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhIDFkav5ESFWul_dsBExX0qAO9q_mCkTzpw&s'
       ],
       isBestSeller: false,
+      isNew: false,
+      isRecomended: true
       ),
   Motor(
       name: "Ninja ZX-10R ABS KRT EDITION",
@@ -108,6 +122,8 @@ var motorList = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNujJ0OAnqMVIfxRiZo99tzwkO5FFsECUs3g&s'
       ],
       isBestSeller: true,
+      isNew: true,
+      isRecomended: false
       ),
   Motor(
       name: "NINJA ZX-6R KRT EDITION",
@@ -123,6 +139,8 @@ var motorList = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYuBWwe4aIOjbEiDZAN5QoJIZo0riEAMlvGg&s'
       ],
       isBestSeller: true,
+      isNew: true,
+            isRecomended: false
       ),
   Motor(
       name: "NINJA ZX-4RR",
@@ -138,6 +156,8 @@ var motorList = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSymElUzPVo57j5Jo9lDgVqA7fDrB9dZq2Oyw&s'
       ],
       isBestSeller: true,
+      isNew: true,
+            isRecomended: false
       ),
   Motor(
       name: "W175 SE",
@@ -153,6 +173,8 @@ var motorList = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRbWdI86GTqQkPLoOf4Ao1R9_6G-ZwYFOnwQ&s'
       ],
       isBestSeller: false,
+      isNew: false,
+      isRecomended: true
       ),
   Motor(
       name: "W175 CAFE",
@@ -168,5 +190,7 @@ var motorList = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR52xWhacQa2GQn8tX9o2Cbv01ikldTbtNeDw&s'
       ],
       isBestSeller: true,
+      isNew: false,
+      isRecomended: true
       ),
 ];

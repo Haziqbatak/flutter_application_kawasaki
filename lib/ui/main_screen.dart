@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_kawasaki/ui/home_srceen.dart';
 import 'detail_screen.dart';
 import 'package:flutter_application_kawasaki/model/data_motor.dart';
 import 'search_page.dart';
@@ -19,7 +20,7 @@ class _MainScreenState extends State<MainScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -29,7 +30,7 @@ class _MainScreenState extends State<MainScreen>
   }
 
   static const List<Widget> _widgetOptions = <Widget>[
-    MotorListView(),
+    HomeScreen(),
     SearchPage(),
     ProfilePage(),
   ];
@@ -52,7 +53,6 @@ class _MainScreenState extends State<MainScreen>
               fontWeight: FontWeight.bold,
             ),
           ),
-
         ),
         body: IndexedStack(
           index: _selectedIndex,
