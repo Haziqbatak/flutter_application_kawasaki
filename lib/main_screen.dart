@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'detail_screen.dart';
 import 'package:flutter_application_kawasaki/model/data_motor.dart';
+import 'search_page.dart'; // Import SearchPage
+import 'profile_page.dart'; // Import ProfilePage
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -27,9 +29,9 @@ class _MainScreenState extends State<MainScreen>
   }
 
   static const List<Widget> _widgetOptions = <Widget>[
-    MotorListView(),
-    Text('Search Page'),
-    Text('Profile Page')
+    MotorListView(),     // Home Page (Motor List)
+    SearchPage(),        // Search Page (Dari search_page.dart)
+    ProfilePage(),       // Profile Page (Dari profile_page.dart)
   ];
 
   void _onItemTapped(int index) {
@@ -60,14 +62,9 @@ class _MainScreenState extends State<MainScreen>
             ],
           ),
         ),
-        body: TabBarView(
-          controller: _tabController,
-          children: [
-            MotorListView(),
-            MotorListView(),
-            MotorListView(),
-            BestSellerListView(),
-          ],
+        body: IndexedStack(
+          index: _selectedIndex,
+          children: _widgetOptions,
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
@@ -94,7 +91,6 @@ class MotorListView extends StatelessWidget {
         final Motor motor = motorList[index];
         return InkWell(
           onTap: () {
-            print('Card Cliked');
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -138,65 +134,6 @@ class MotorListView extends StatelessWidget {
         );
       },
       itemCount: motorList.length,
-    );
-  }
-}
-
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final bestSeller = motorList.where((motor) => motor.isBestSeller).toList();
-
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        final Motor motor = bestSeller[index];
-        return InkWell(
-          onTap: () {
-            print('Best Seller Card Clicked');
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailScreen(motor: motor),
-              ),
-            );
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              height: 100,
-              child: Card(
-                  elevation: 5,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        flex: 1,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(motor.gambar),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 2,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [Text(motor.name), Text(motor.harga)],
-                        ),
-                      )
-                    ],
-                  )),
-            ),
-          ),
-        );
-      },
-      itemCount: bestSeller.length,
     );
   }
 }
