@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_kawasaki/search_page.dart';
+import 'package:flutter_application_kawasaki/profile_page.dart';
 import 'detail_screen.dart';
 import 'package:flutter_application_kawasaki/model/data_motor.dart';
 
@@ -12,14 +14,12 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
-  // List of widgets for different tabs
   static const List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),    // HomeScreen without TabBar
-    SearchPage(),    // Search Page
-    ProfilePage(),   // Profile Page
+    HomeScreen(),
+    SearchPage(),
+    ProfilePage(),
   ];
 
-  // This function is called when a tab is tapped
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -39,7 +39,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ),
         ),
-        body: _widgetOptions[_selectedIndex], // Shows the selected page
+        body: _widgetOptions[_selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
@@ -48,45 +48,59 @@ class _MainScreenState extends State<MainScreen> {
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.blue,
-          onTap: _onItemTapped, // Handle tab switching
+          onTap: _onItemTapped,
         ),
       ),
     );
   }
 }
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: MotorListView(), // Your main motor listing
-    );
-  }
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 4, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: const Text('Search Page'),
+      appBar: AppBar(
+        title: const Text('Home'),
+        bottom: TabBar(
+          controller: _tabController,
+          tabs: const [
+            Tab(text: 'Recomended'),
+            Tab(text: 'Popular'),
+            Tab(text: 'News'),
+            Tab(text: 'Best Seller'),
+          ],
+        ),
       ),
-    );
-  }
-}
-
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: const Text('Profile Page'),
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          MotorListView(),   // Halaman Recomended
+          MotorListView(),   // Halaman Popular
+          MotorListView(),   // Halaman News
+          BestSellerListView(), // Halaman Best Seller
+        ],
       ),
     );
   }
@@ -145,6 +159,64 @@ class MotorListView extends StatelessWidget {
         );
       },
       itemCount: motorList.length,
+    );
+  }
+}
+
+class BestSellerListView extends StatelessWidget {
+  const BestSellerListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final bestSeller = motorList.where((motor) => motor.isBestSeller).toList();
+
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        final Motor motor = bestSeller[index];
+        return InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(motor: motor),
+              ),
+            );
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              height: 100,
+              child: Card(
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.asset(motor.gambar),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [Text(motor.name), Text(motor.harga)],
+                        ),
+                      )
+                    ],
+                  )),
+            ),
+          ),
+        );
+      },
+      itemCount: bestSeller.length,
     );
   }
 }
