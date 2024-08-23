@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'detail_screen.dart';
 import 'package:flutter_application_kawasaki/model/data_motor.dart';
+import 'search_page.dart';
+import 'profile_page.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -9,17 +11,29 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MainScreenState extends State<MainScreen>
+    with SingleTickerProviderStateMixin {
   int _selectedIndex = 0;
+  late TabController _tabController;
 
-  // List of widgets for different tabs
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 4, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
   static const List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),    // HomeScreen without TabBar
-    SearchPage(),    // Search Page
-    ProfilePage(),   // Profile Page
+    MotorListView(),
+    SearchPage(),
+    ProfilePage(),
   ];
 
-  // This function is called when a tab is tapped
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -32,14 +46,18 @@ class _MainScreenState extends State<MainScreen> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Main Screen',
+            'Kawasaki',
             style: TextStyle(
               fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
             ),
           ),
+
         ),
-        body: _widgetOptions[_selectedIndex], // Shows the selected page
+        body: IndexedStack(
+          index: _selectedIndex,
+          children: _widgetOptions,
+        ),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
@@ -48,45 +66,8 @@ class _MainScreenState extends State<MainScreen> {
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.blue,
-          onTap: _onItemTapped, // Handle tab switching
+          onTap: _onItemTapped,
         ),
-      ),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: MotorListView(), // Your main motor listing
-    );
-  }
-}
-
-class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: const Text('Search Page'),
-      ),
-    );
-  }
-}
-
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: const Text('Profile Page'),
       ),
     );
   }
