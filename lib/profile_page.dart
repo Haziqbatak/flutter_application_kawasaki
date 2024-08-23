@@ -13,12 +13,12 @@ class ProfilePage extends StatelessWidget {
           const CircleAvatar(
             radius: 50,
             backgroundImage: NetworkImage(
-              'https://example.com/profile_picture.png',
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUpsDK5dkH7envHCdUECqq0XzCWK1Dv96XcQ&s',
             ),
           ),
           const SizedBox(height: 16),
           const Text(
-            'Nama Pengguna',
+            'User',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),

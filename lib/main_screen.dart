@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'detail_screen.dart';
 import 'package:flutter_application_kawasaki/model/data_motor.dart';
-import 'search_page.dart'; // Import SearchPage
-import 'profile_page.dart'; // Import ProfilePage
+import 'search_page.dart';
+import 'profile_page.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -29,9 +29,9 @@ class _MainScreenState extends State<MainScreen>
   }
 
   static const List<Widget> _widgetOptions = <Widget>[
-    MotorListView(),     // Home Page (Motor List)
-    SearchPage(),        // Search Page (Dari search_page.dart)
-    ProfilePage(),       // Profile Page (Dari profile_page.dart)
+    MotorListView(),
+    SearchPage(),
+    ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -46,7 +46,7 @@ class _MainScreenState extends State<MainScreen>
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Main Screen',
+            'Kawasaki',
             style: TextStyle(
               fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
