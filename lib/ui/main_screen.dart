@@ -93,7 +93,7 @@ class MotorListView extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
-              height: 100,
+              height: 20,
               child: Card(
                 elevation: 5,
                 shape: RoundedRectangleBorder(

@@ -95,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [
+        children: const [
           MotorListView(),
           RecomendedListView(),
           MotorListView(),
@@ -252,7 +252,7 @@ class NewListView extends StatelessWidget {
                   child: Row(
                     children: <Widget>[
                       Expanded(
-                        flex: 1,
+                        flex: 2,
                         child: Padding(
                           padding: const EdgeInsets.only(left: 8.0),
                           child: ClipRRect(

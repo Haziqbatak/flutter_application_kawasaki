@@ -12,8 +12,8 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
                   'Explore Your Style',
                   style: TextStyle(
@@ -36,8 +36,8 @@ class HomePage extends StatelessWidget {
                             color: Colors.blue,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
                             child: Text(
                               'All',
                               style: TextStyle(
@@ -49,8 +49,8 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           'Popular',
                           style: TextStyle(
@@ -59,8 +59,8 @@ class HomePage extends StatelessWidget {
                               fontWeight: FontWeight.w500),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           'Favorite',
                           style: TextStyle(
@@ -69,8 +69,8 @@ class HomePage extends StatelessWidget {
                               fontWeight: FontWeight.w500),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           'Recomended',
                           style: TextStyle(
@@ -79,8 +79,8 @@ class HomePage extends StatelessWidget {
                               fontWeight: FontWeight.w500),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           'News',
                           style: TextStyle(
@@ -89,8 +89,8 @@ class HomePage extends StatelessWidget {
                               fontWeight: FontWeight.w500),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           'Promo',
                           style: TextStyle(
@@ -103,8 +103,8 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              CardWidget(),
-              CardWidget()
+              const CardWidget(),
+              const CardWidget()
             ],
           ),
         )),
@@ -131,7 +131,7 @@ class CardWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Container(
-                child: Text(
+                child: const Text(
                   'New Motor',
                   style: TextStyle(
                     fontFamily: 'Poppins',
@@ -145,8 +145,8 @@ class CardWidget extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Row(
                 children: <Widget>[
                   Expanded(
